@@ -1,6 +1,19 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
+/**
+ * Spørgsmål:
+ * 
+ * 1. Beskriv denne lille Flutter app på en overordnet måde. Hvad består den af?
+ * 2. Hvad sker der når brugeren trykker på den "floating action button" ?
+ * 3. Hvad sker der når brugeren trykker på knappen placeret midt på skærmen ?
+ *    - Beskriv Fruit typen.
+ *    - Beskriv hvordan frugterne filtreres og mappes før de præsenteres.
+ *    - Hvordan kunne koden til dette forbedres?
+ * 4. Forskel på StatelessWidget og StatefulWidget
+ * 5. Betyder det noget om en metode starter med underscore fx. _metodeNavn ?
+ */
+
 class Fruit {
   final String name;
   final double radius;
@@ -41,10 +54,10 @@ class _TestPageState extends State<TestPage> {
   final int b;
   List<Fruit> _fruits = [
     Fruit("apple", 4.0, Colors.green, ripe: false),
-    Fruit("grape", 1.0, Colors.green, ripe: true),
+    Fruit("grape", 2.0, Colors.green, ripe: true),
     Fruit("watermelon", 10.0, Colors.green),
     Fruit("tomato", 4.0, Colors.red, ripe: true),
-    Fruit("orange", 4.0, Colors.orange, ripe: true),
+    Fruit("orange", 5.0, Colors.orange, ripe: true),
   ];
   String _output = "";
 
@@ -84,12 +97,11 @@ class _TestPageState extends State<TestPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          int a = 1;
-          int b = 5;
-          int res = a + b;
-          showResult(res);
+          int a = 2;
+          int b = 20;
+          showResult(a + b);
         },
-        child: Icon(Icons.question_answer),
+        child: Icon(Icons.add),
       ),
     );
   }
